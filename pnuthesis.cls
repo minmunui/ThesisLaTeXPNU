@@ -49,6 +49,7 @@
 \usepackage{tocloft}
 \usepackage{listings}
 \usepackage{setspace}
+\usepackage{geometry} % <-- 이 줄을 추가하세요.
 
 \pagenumbering{arabic}
 % \rfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}}
@@ -69,7 +70,7 @@
 \addtolength{\hoffset}  {-1 in}
 \addtolength{\voffset}  {-1 in}
 
-\addtolength{\hoffset}  {25 mm}
+\addtolength{\hoffset}  {27.5 mm}
 \addtolength{\voffset}  {35 mm}
 
 \setlength{\topmargin}  {0mm}
@@ -79,9 +80,9 @@
 \setlength{\marginparwidth} {10mm}
 \setlength{\marginparsep}   {0mm}
 
-\setlength{\textwidth}      {150mm}
+\setlength{\textwidth}      {155mm}
 \setlength{\textheight}     {227mm}
-\setlength{\oddsidemargin}  {5mm}
+\setlength{\oddsidemargin}  {0mm}
 \setlength{\footskip}       {17.5mm}
 
 \if@Korean
@@ -178,6 +179,7 @@
 \AtEndDocument{
 	\pagebreak
 	\if@Korean
+	\newgeometry{left=2.5cm, right=3.0cm, top=3.5cm, bottom=3.5cm}
 	\pushAbstract[english]
 	\else
 	\pushAbstract[korean]
@@ -272,14 +274,14 @@
 							부산대학교 대학원\\
 						}
 						\vspace*{0.5cm}
-						\vspace*{-0.18cm}
+                        
 						{
 							\fontsize {16pt}{18pt}
 							\selectfont
-							물리학과 \\
+							정보융합공학과 \\
 						}
 					\else
-						Department of Physics \\
+						Department of Information Convergence Enginerring \\
 						The Graduate School \\
 						Pusan National University \\
 					\fi
@@ -291,7 +293,7 @@
 					\else
 						\textbf{\@GradYearEng} \\
 					\fi
-					\vspace*{0.5cm}
+					\vspace*{0.7cm}
                     \end{center}
                 \end{minipage}
             \newpage
@@ -300,10 +302,10 @@
 \newcommand{\makeapproval}{%
             \thispagestyle{empty}
             \begin{center}
-				\vspace*{0.00cm}
+				\vspace*{0.20cm}
 				\setstretch{1.3}
                 % 타이틀 시작
-				\fontsize{22pt}{24pt}
+				\fontsize{22pt}{22pt}
 				\selectfont
 				\if@Korean
 					\@KorTitle\ \\
@@ -311,18 +313,18 @@
 					\@EngTitle\ \\
 				\fi
                 \vspace*{1.5cm}
-				\vspace*{-9pt}
+				% \vspace*{-9pt}
 				
 				\if@Korean % 1차 본문 시작 (한국어)
 					\fontsize {16pt}{16pt}
 					\selectfont
 					\if@Doctor
-						이 논문을 이학박사 학위논문으로 제출함\\
+						이 논문을 공학박사 학위논문으로 제출함\\
 					\else
-						이 논문을 이학석사 학위논문으로 제출함\\
+						이 논문을 공석사 학위논문으로 제출함\\
 					\fi
-					\vspace*{1.5cm}
-					\fontsize {14pt}{16pt}
+					\vspace*{1.0cm}
+					\fontsize {14pt}{14pt}
 					\selectfont
 					\@KorAuthor \\ 
 					\vspace*{1.0cm}
@@ -359,8 +361,8 @@
 						\fontsize {14pt}{16pt}
 						\selectfont
 						\textbf{\@KorExamYear}\ \\
-						\vspace*{1.0cm}
-						\vspace*{-20pt}
+						\vspace*{0.5cm}
+						% \vspace*{-20pt}
 						\setstretch{2.0}
 						\fontsize {14pt}{16pt}
 						\selectfont
@@ -395,8 +397,8 @@
 						\fi
 						\fi
                     \end{center}
-					% \vspace*{1.5cm}
-					\vspace*{3pt}
+					\vspace*{0.2cm}
+					% \vspace*{3pt}
                 \end{minipage}
             \newpage
             }
@@ -506,27 +508,27 @@
 	\begin{center}
 	\setstretch{1.3}	
     \pagestyle{plain}%
-	\vspace*{-0.7cm}
+	\vspace*{-0.5cm}
 	\fontsize{14pt}{14pt}
 	\selectfont
 	\@KorTitle\ \\
 	\vspace*{1.5cm}
-	\vspace*{-0.2cm}
+	% \vspace*{-0.1cm}
 	\fontsize{12pt}{12pt}
 	\selectfont
 	\@KorAuthor\ \\
 	\vspace*{1.0cm}
-	\vspace*{-0.1cm}
+	% \vspace*{-0.1cm}
 	\fontsize{11pt}{11pt}
 	\selectfont
-	부산대학교 대학원 물리학과\\
+	부산대학교 대학원 정보융합공학과\\
 	\vspace*{1.5cm}
-	\vspace*{-0.2cm}
+	% \vspace*{-0.1cm}
 	\fontsize{12pt}{12pt}
 	\selectfont
 	요약\\
-	\vspace*{1.0cm}
-	\vspace*{-0.0cm}
+	\vspace*{0.5cm}
+	% \vspace*{-0.0cm}
 	\fontsize{11pt}{13pt}
 	\selectfont
 	\end{center}
@@ -543,7 +545,7 @@
 	\begin{center}
 	\setstretch{1.3}
     \pagestyle{plain}%
-	\vspace*{-0.7cm}
+	\vspace*{-0.5cm}
 	\fontsize{14pt}{14pt}
 	\selectfont
 	\@EngTitle\ \\
@@ -600,6 +602,7 @@
 	\pushAbstract[english]
 	\fi
 	\pagenumbering{arabic}
+    \addtolength{\oddsidemargin}{2.5mm}
 }
 
 % Typesetting for toc, tot, tof
