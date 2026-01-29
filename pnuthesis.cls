@@ -110,6 +110,8 @@
 \renewcommand{\bibname}{References}
 \renewcommand{\figurename}{Figure}
 \renewcommand{\tablename}{Table}
+\renewcommand{\listalgorithmname}{List of Algorithms}
+\renewcommand{\algorithmname}{Algorithm}
 \fi
 
 \renewcommand{\title}[2][korean]{%
@@ -321,7 +323,7 @@
 					\if@Doctor
 						이 논문을 공학박사 학위논문으로 제출함\\
 					\else
-						이 논문을 공석사 학위논문으로 제출함\\
+						이 논문을 공학석사 학위논문으로 제출함\\
 					\fi
 					\vspace*{1.0cm}
 					\fontsize {14pt}{14pt}
@@ -330,7 +332,7 @@
 					\vspace*{1.0cm}
 					부산대학교 대학원 \\ 
 					\vspace*{0.5cm}
-					물 리 학 과 \\
+					정보융합공학과 \\
 					\vspace*{1.0cm}
 					지 도 교 수 ~\@KorAdviser \\
 				\else % 1차 본문 시작 (영어)
@@ -353,9 +355,9 @@
 						\fontsize {16pt}{18pt}
 						\selectfont
 						\if@Doctor
-							\@AuthorNS의 이학박사 학위논문을 인준함\\
+							\@AuthorNS의 공학박사 학위논문을 인준함\\
 						\else
-							\@AuthorNS의 이학석사 학위논문을 인준함\\
+							\@AuthorNS의 공학석사 학위논문을 인준함\\
 						\fi
 						\vspace*{1.0cm}
 						\fontsize {14pt}{16pt}
@@ -366,9 +368,9 @@
 						\setstretch{2.0}
 						\fontsize {14pt}{16pt}
 						\selectfont
-						위~~원~~장:~~\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}인\\
-						위~~~~~~~~원:~~\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}인\\
-						위~~~~~~~~원:~~\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}인\\
+						위~~원~~장~~~~~~~~~~~~~~위~~~원~~~장~~~~~~~~~~~~~~인\\
+						위~~~~~~~~원~~~~~~~~~~~~~~교~~~수~~~님~~~~~~~~~~~~~~인\\
+						위~~~~~~~~원~~~~~~~~~~~~~~김~~~태~~~운~~~~~~~~~~~~~~인\\
 						\if@Doctor
 						위~~~~~~~~원:~~\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}인\\
 						위~~~~~~~~원:~~\underline{~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~}인\\
@@ -558,7 +560,7 @@
 	\vspace*{-0.2cm}
 	\fontsize{11pt}{11pt}
 	\selectfont
-	Department of Physics\\
+	Department of Information Convergence Engineering\\
 	The Graduate School\\
 	Pusan National University\\
 	\vspace*{1.5cm}
@@ -570,9 +572,11 @@
 	\vspace*{-0.2cm}
 	\fontsize{11pt}{13pt}
 	\selectfont
+	\end{center}
+	\begin{justify}
 }{  %\setcounter{pagemarker}{\value{page}}
     % \addtocounter{pagemarker}{1}
-	\end{center}
+	\end{justify}
     \newpage \pagenumbering{arabic}
     \let\linebreak\@tempbreak
 }
@@ -585,15 +589,20 @@
 	\if@Korean
 		\tableofcontents
 		\clearpage
-		% \listoftables
-		% \clearpage
 		\listoffigures
+		\clearpage
+		\listoftables
+		% \clearpage
+		% \listofalgorithms
 		\clearpage
 	\else
 		\tableofcontents
 		\clearpage
-		% \listoftables
 		\listoffigures
+		\clearpage
+		\listoftables
+		% \clearpage
+		% \listofalgorithms
 		\clearpage
 	\fi
 	\if@Korean
